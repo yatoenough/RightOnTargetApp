@@ -51,12 +51,4 @@ class MainViewController: UIViewController {
         
         self.label.text = String(self.number)
     }
-    
-    @IBAction func showAboutScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let aboutVC = storyboard.instantiateViewController(withIdentifier: "AboutViewController")
-        self.present(aboutVC, animated: true, completion: nil)
-    }
 }
-
-
