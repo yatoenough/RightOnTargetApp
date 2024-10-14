@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
@@ -50,6 +50,12 @@ class ViewController: UIViewController {
         self.number = Int.random(in: 1...50)
         
         self.label.text = String(self.number)
+    }
+    
+    @IBAction func showAboutScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let aboutVC = storyboard.instantiateViewController(withIdentifier: "AboutViewController")
+        self.present(aboutVC, animated: true, completion: nil)
     }
 }
 
