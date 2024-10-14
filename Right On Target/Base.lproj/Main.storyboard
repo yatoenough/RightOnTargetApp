@@ -48,6 +48,10 @@
                             <constraint firstItem="myx-Mc-Gt7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y9Z-Wk-PVL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="OKN-Gt-XFP" id="hzS-ah-l4v"/>
+                        <outlet property="slider" destination="j54-Xe-L24" id="qqK-cy-a6m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
