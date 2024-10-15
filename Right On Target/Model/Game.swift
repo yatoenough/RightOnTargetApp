@@ -8,6 +8,7 @@
 protocol GameProtocol {
     var score: Int { get }
     var currentSecretValue: Int { get }
+    var secretValueGenerator: GeneratorProtocol { get }
     var isGameEnded: Bool { get }
     
     func restartGame()
@@ -18,6 +19,7 @@ protocol GameProtocol {
 class Game: GameProtocol {
     var score: Int = 0
     var currentSecretValue: Int = 0
+    var secretValueGenerator: GeneratorProtocol = RandomGenerator()
     var isGameEnded: Bool {
         if currentRound >= lastRound {
             return true
@@ -38,7 +40,7 @@ class Game: GameProtocol {
         minSecretValue = startValue
         maxSecretValue = endValue
         lastRound = rounds
-        currentSecretValue = self.getNewSecretValue()
+        currentSecretValue = getNewSecretValue()
     }
     
     func restartGame() {
@@ -48,7 +50,7 @@ class Game: GameProtocol {
     }
     
     func startNewRound() {
-        currentSecretValue = self.getNewSecretValue()
+        currentSecretValue = getNewSecretValue()
         currentRound += 1
     }
     
@@ -63,6 +65,6 @@ class Game: GameProtocol {
     }
     
     private func getNewSecretValue() -> Int {
-        (minSecretValue...maxSecretValue).randomElement()!
+        secretValueGenerator.getRandomValue(range: minSecretValue...maxSecretValue)
     }
 }
