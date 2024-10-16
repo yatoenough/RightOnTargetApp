@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class SliderViewController: UIViewController {
     
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!

@@ -1,13 +1,13 @@
 //
-//  AboutViewController.swift
+//  MenuViewController.swift
 //  Right On Target
 //
-//  Created by Nikita Shyshkin on 14/10/2024.
+//  Created by Nikita Shyshkin on 16/10/2024.
 //
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +16,5 @@ class AboutViewController: UIViewController {
     @IBAction func hideCurrentScene() {
         self.dismiss(animated: true, completion: nil)
     }
+
 }
