@@ -25,12 +25,17 @@ class MainViewController: UIViewController {
         
         if game.isGameEnded {
             showEndgameAlert(score: game.round.score)
-            game.restartGame()
+            restartGame()
         } else {
             game.startNewRound()
         }
         
         updateLabelWithSecretNumber(newText: String(game.round.currentSecretValue))
+    }
+
+    private func restartGame() {
+        game.restartGame()
+        game.round.reset()
     }
     
     private func updateLabelWithSecretNumber(newText: String) {

@@ -10,6 +10,7 @@ protocol GameRoundProtocol {
     var currentSecretValue: Int { get set }
     
     func calculateScore(with value: Int)
+    func reset()
 }
 
 class GameRound: GameRoundProtocol {
@@ -24,5 +25,9 @@ class GameRound: GameRoundProtocol {
         } else {
             score += 50
         }
+    }
+    
+    func reset() {
+        score = 0
     }
 }
